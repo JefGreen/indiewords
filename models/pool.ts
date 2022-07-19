@@ -1,20 +1,26 @@
 class Pool {
-  public constructor(letters: string[]) {
-    this.pool = letters;
+  letters: Array<string>;
+
+  constructor(letters: Array<string>) {
+    this.letters = letters;
   }
 
-  public pickFromPool(quantity: number): string[] {
-    let removedLetters = []
+  pickFromPool(quantity: number): Array<string> {
+    let removedLetters: Array<string> = []
     for (let i = 0; i < quantity; i++) {
-      removedLetters.append(this.pool.pop())
+      const removedLetter: string | undefined = this.letters.pop()
+      if (removedLetter) {
+        removedLetters.push(removedLetter)
+      }
     }
     return removedLetters
   }
 
-  private shuffle(): string[] {
-    let current = this.pool.length;
+  shuffle() {
+    let current: number = this.letters.length;
     let random;
     let temp;
+
 
     // While there remain elements to shuffle.
     while (current) {
@@ -23,13 +29,18 @@ class Pool {
       random = Math.floor(Math.random() * current--);
 
       // And swap it with the current element.
-      temp = this.pool[current];
-      this.pool[current] = this.pool[random];
-      this.pool[random] = temp;
+      temp = this.letters[current];
+      this.letters[current] = this.letters[random];
+      this.letters[random] = temp;
     }
-
-    return array;
   }
-
-
 }
+
+
+const exemple = new Pool(["a", "b", "c"])
+
+console.log(exemple.letters)
+exemple.shuffle()
+console.log(exemple.letters)
+
+
