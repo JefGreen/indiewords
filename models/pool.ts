@@ -42,5 +42,7 @@ const exemple = new Pool(["a", "b", "c"])
 console.log(exemple.letters)
 exemple.shuffle()
 console.log(exemple.letters)
+console.log(exemple.pickFromPool(2))
+console.log(exemple.letters)
 
 
