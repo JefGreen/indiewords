@@ -3,7 +3,7 @@ type Description = string
 type Dictionary = Record<Word, Description>
 
 
-class WordValidator {
+class WordDictionary {
   words: Dictionary = {
     "word": 12,
   }
@@ -16,9 +16,8 @@ class WordValidator {
     }
   }
 
-  isWordValid(word: string): Boolean {
-    if (this.theme)
-    return !!this.words[word]
+  validate(word: string): Boolean {
+    return !!this.theme[word] || !!this.words[word]
   }
 
 
@@ -29,7 +28,7 @@ class WordValidator {
 }
 
 
-const validator = new WordValidator()
+const dictionary = new WordDictionary()
 
-console.log(validator.isWordValid("word"))
-console.log(validator.isWordValid("wtord"))
+console.log(dictionary.validate("word"))
+console.log(dictionary.validate("wtord"))
