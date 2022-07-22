@@ -16,8 +16,12 @@ class WordDictionary {
     }
   }
 
-  validate(word: string): Boolean {
+  validate(word: string): boolean {
     return !!this.theme[word] || !!this.words[word]
+  }
+
+  countPoints(word: string): number {
+    return 0
   }
 
 
