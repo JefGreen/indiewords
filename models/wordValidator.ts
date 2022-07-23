@@ -21,13 +21,30 @@ class WordDictionary {
   }
 
   countPoints(word: string): number {
-    return 0
+    const pointsPerLetter: Record<string, number> = {
+      "d": 2,
+      "g": 2,
+      "b": 3,
+      "c": 3,
+      "m": 3,
+      "p": 3,
+      "f": 4,
+      "h": 4,
+      "v": 4,
+      "w": 4,
+      "y": 4,
+      "k": 5,
+      "j": 8,
+      "x": 8,
+      "q": 10,
+      "z": 10,
+    }
+    let points: number = 0
+    for (let i = 0; i < word.length; i++) {
+      points += pointsPerLetter[word[i]] || 1
+    }
+    return points
   }
-
-
-
-
-
 
 }
 
