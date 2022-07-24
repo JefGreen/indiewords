@@ -2,13 +2,15 @@
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
 import HelloWorld from './components/HelloWorld.vue'
-import WordDictionary from "./models/wordValidator"
+// import WordDictionary from "./models/wordValidator"
+import { useDummyStore } from './stores/dummyStore'
 
-const dictionary = new WordDictionary()
 
-console.log(dictionary.validate("word"))
-console.log(dictionary.validate("wtord"))
-console.log(dictionary.countPoints("dvya"))
+const dummyStore = useDummyStore()
+
+console.log(dummyStore.letters)
+// console.log(dictionary.validate("wtord"))
+// console.log(dictionary.countPoints("dvya"))
 </script>
 
 <template>
