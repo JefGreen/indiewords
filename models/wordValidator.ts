@@ -53,3 +53,4 @@ const dictionary = new WordDictionary()
 
 console.log(dictionary.validate("word"))
 console.log(dictionary.validate("wtord"))
+console.log(dictionary.countPoints("dvya"))
