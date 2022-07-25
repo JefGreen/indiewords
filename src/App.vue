@@ -11,12 +11,11 @@ const gameStore = useGameStore()
 console.log(gameStore.letters)
 gameStore.pickLetters(21, "jeff")
 console.log(gameStore.letters)
-// console.log(dictionary.validate("wtord"))
-// console.log(dictionary.countPoints("dvya"))
 </script>
 
 <template>
   <div>
+    <!-- TODO: start using pixi js -->
     {{gameStore.letters["jeff"]}}
     <a href="https://vitejs.dev" target="_blank">
       <img src="/vite.svg" class="logo" alt="Vite logo" />
