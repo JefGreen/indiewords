@@ -31,7 +31,7 @@ const lettersPool: Array<string> = []
 export const useGameStore = defineStore('gameStore', {
   state: () =>
     ({
-      letters: ["a", "b", "c"],
+      letters: shuffle(lettersPool),
     } as {
       letters: Array<string>
     }),
@@ -45,7 +45,7 @@ export const useGameStore = defineStore('gameStore', {
   },
 })
 
-shuffle(letters: Array<string>): Array<string> {
+function shuffle(letters: Array<string>): Array<string> {
   let current: number = letters.length;
   let random;
   let temp;
