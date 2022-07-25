@@ -2,7 +2,7 @@ class Pool {
   letters: Array<string>;
 
   constructor(letters: Array<string>) {
-    this.letters = letters;
+    this.letters = this.shuffle(letters);
   }
 
   pickFromPool(quantity: number): Array<string> {
@@ -16,8 +16,8 @@ class Pool {
     return removedLetters
   }
 
-  shuffle() {
-    let current: number = this.letters.length;
+  shuffle(letters: Array<string>): Array<string> {
+    let current: number = letters.length;
     let random;
     let temp;
 
@@ -29,20 +29,13 @@ class Pool {
       random = Math.floor(Math.random() * current--);
 
       // And swap it with the current element.
-      temp = this.letters[current];
-      this.letters[current] = this.letters[random];
-      this.letters[random] = temp;
+      temp = letters[current];
+      letters[current] = letters[random];
+      letters[random] = temp;
     }
+    return letters
   }
 }
 
-
-const exemple = new Pool(["a", "b", "c"])
-
-console.log(exemple.letters)
-exemple.shuffle()
-console.log(exemple.letters)
-console.log(exemple.pickFromPool(2))
-console.log(exemple.letters)
 
 
