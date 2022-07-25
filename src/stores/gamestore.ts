@@ -1,9 +1,9 @@
 import { defineStore } from 'pinia'
 
-export const useDummyStore = defineStore('dummyStore', {
+export const useGameStore = defineStore('gameStore', {
   state: () =>
     ({
-      letters: ["a", "b", "d"],
+      letters: ["a", "b", "c"],
     } as {
       letters: Array<string>
     }),

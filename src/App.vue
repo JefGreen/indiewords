@@ -3,12 +3,12 @@
 // Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
 import HelloWorld from './components/HelloWorld.vue'
 // import WordDictionary from "./models/wordValidator"
-import { useDummyStore } from './stores/dummyStore'
+import { useGameStore } from './stores/gameStore'
 
 
-const dummyStore = useDummyStore()
+const gameStore = useGameStore()
 
-console.log(dummyStore.letters)
+console.log(gameStore.letters)
 // console.log(dictionary.validate("wtord"))
 // console.log(dictionary.countPoints("dvya"))
 </script>
