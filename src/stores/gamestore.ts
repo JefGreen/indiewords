@@ -1,6 +1,9 @@
 import { defineStore } from 'pinia'
 
-const lettersPool: Array<string> = []
+type User = string
+type Letters = Array<string>
+
+const lettersPool: Letters = []
 .concat(Array(13).fill("a"))
 .concat(Array(3).fill("b"))
 .concat(Array(3).fill("c"))
@@ -31,17 +34,26 @@ const lettersPool: Array<string> = []
 export const useGameStore = defineStore('gameStore', {
   state: () =>
     ({
-      letters: shuffle(lettersPool),
+      letters: {"pool": shuffle(lettersPool)},
     } as {
-      letters: Array<string>
+      letters: Record<User, Letters>
+
     }),
   actions: {
-    increment() {
-      this.counter++
-    },
-    randomizeCounter() {
-      this.counter = Math.round(100 * Math.random())
-    },
+    pickLetters(quantity: number, player: User): Array<string> {
+      let removedLetters: Array<string> = []
+      for (let i = 0; i < quantity; i++) {
+        const removedLetter: string | undefined = this.letters["pool"].pop()
+        if (removedLetter) {
+          if (!this.letters[player]) {
+            this.letters[player] = [removedLetter]
+          } else {
+            this.letters[player].push(removedLetter)
+          }
+        }
+      }
+      return removedLetters
+    }
   },
 })
 
