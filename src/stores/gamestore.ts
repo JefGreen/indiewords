@@ -3,6 +3,7 @@ import { defineStore } from 'pinia'
 type User = string
 type Letters = Array<string>
 type Words = Array<string>
+type Dictionary = Set<string>
 
 const lettersPool: Letters = []
 .concat(Array(13).fill("a"))
