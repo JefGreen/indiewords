@@ -2,6 +2,7 @@ import { defineStore } from 'pinia'
 
 type User = string
 type Letters = Array<string>
+type Words = Array<string>
 
 const lettersPool: Letters = []
 .concat(Array(13).fill("a"))
@@ -35,8 +36,10 @@ export const useGameStore = defineStore('gameStore', {
   state: () =>
     ({
       letters: {"pool": shuffle(lettersPool)},
+      words: {},
     } as {
-      letters: Record<User, Letters>
+      letters: Record<User, Letters>,
+      words: Record<User, Words>
 
     }),
   actions: {

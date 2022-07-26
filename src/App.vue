@@ -2,6 +2,7 @@
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
 import HelloWorld from './components/HelloWorld.vue'
+import Board from './components/Board.vue'
 // import WordDictionary from "./models/wordValidator"
 import { useGameStore } from './stores/gameStore'
 
@@ -25,6 +26,7 @@ console.log(gameStore.letters)
     </a>
   </div>
   <HelloWorld msg="Vite + Vue" />
+  <Board/>
 </template>
 
 <style scoped>
