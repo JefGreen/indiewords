@@ -1,8 +1,9 @@
 import { defineStore } from 'pinia'
 
 type User = string
+type Word = string
 type Letters = Array<string>
-type Words = Array<string>
+type Words = Array<Word>
 type Dictionary = Set<string>
 
 const lettersPool: Letters = []
@@ -38,10 +39,11 @@ export const useGameStore = defineStore('gameStore', {
     ({
       letters: {"pool": shuffle(lettersPool)},
       words: {},
+      theme: null,
     } as {
       letters: Record<User, Letters>,
       words: Record<User, Words>
-
+      theme: Dictionary | null
     }),
   actions: {
     pickLetters(quantity: number, player: User): Array<string> {
@@ -57,6 +59,9 @@ export const useGameStore = defineStore('gameStore', {
         }
       }
       return removedLetters
+    },
+    validateWord(word: Word): boolean {
+      return !!this.theme[word]
     }
   },
 })
