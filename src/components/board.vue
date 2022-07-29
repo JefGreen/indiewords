@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import  *  from './node_modules/pixi.js/dist/browser/pixi.min.js'
+import { Application } from 'pixi.js'
 
 defineProps<{ msg: string }>()
 
-const Application = PIXI.Application
+// const Application = Application
 const app = new Application();
 </script>
 
