@@ -17,6 +17,11 @@ defineProps<{ msg: string }>()
 //   elapsed += delta;
 //   sprite.x = 100.0 + Math.cos(elapsed/50.0) * 100.0;
 // });
+
+const canvas = document.getElementById("myCanvas")
+
+const ctx = canvas.getContext("2d")
+
 </script>
 
 <template>
@@ -30,5 +35,7 @@ defineProps<{ msg: string }>()
 }
 #myCanvas{
   background: red
+  margin: 0,
+
 }
 </style>
