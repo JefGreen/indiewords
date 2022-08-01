@@ -18,9 +18,11 @@ defineProps<{ msg: string }>()
 //   sprite.x = 100.0 + Math.cos(elapsed/50.0) * 100.0;
 // });
 
-const canvas = document.getElementById("myCanvas")
+const canvas = document.getElementById("myCanvas") as HTMLCanvasElement
 
 const ctx = canvas.getContext("2d")
+const letter = new Letter()
+car.draw(ctx)
 
 </script>
 
