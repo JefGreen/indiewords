@@ -1,5 +1,8 @@
 <script setup lang="ts">
-import * as PIXI from 'pixi.js';
+import { onMounted } from 'vue'
+import { Letter } from '../models/letter'
+
+// import * as PIXI from 'pixi.js';
 
 defineProps<{ msg: string }>()
 
@@ -18,11 +21,14 @@ defineProps<{ msg: string }>()
 //   sprite.x = 100.0 + Math.cos(elapsed/50.0) * 100.0;
 // });
 
-const canvas = document.getElementById("myCanvas") as HTMLCanvasElement
+onMounted(() => {
+  const canvas = document.getElementById("myCanvas")
 
-const ctx = canvas.getContext("2d")
-const letter = new Letter()
-car.draw(ctx)
+  console.log(canvas)
+  const ctx = canvas.getContext("2d")
+  const letter = new Letter()
+  letter.draw(ctx)
+})
 
 </script>
 
@@ -36,8 +42,8 @@ car.draw(ctx)
   color: #888;
 }
 #myCanvas{
-  background: red
-  margin: 0,
+  background: red;
+  margin: 0;
 
 }
 </style>
