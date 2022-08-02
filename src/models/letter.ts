@@ -12,6 +12,6 @@ export class Letter {
   draw(ctx: Context) {
     ctx.beginPath();
     ctx.font = "20px Georgia";
-    ctx.fillText(this.value, 10, 50);
+    ctx.fillText(this.value, this.x, this.y);
   }
 }
