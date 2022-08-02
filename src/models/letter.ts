@@ -6,11 +6,12 @@ export class Letter {
     this.height = height
 
     this.value = value
+    console.log("value: ", value)
   }
 
   draw(ctx: Context) {
     ctx.beginPath();
     ctx.font = "20px Georgia";
-    ctx.fillText("Hello World!", 10, 50);
+    ctx.fillText(this.value, 10, 50);
   }
 }

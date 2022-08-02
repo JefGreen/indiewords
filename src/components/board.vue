@@ -1,31 +1,28 @@
 <script setup lang="ts">
 import { onMounted } from 'vue'
 import { Letter } from '../models/letter'
+import { useGameStore } from '../stores/gameStore'
 
 // import * as PIXI from 'pixi.js';
 
-defineProps<{ msg: string }>()
 
-// Create the application helper and add its render target to the page
-// let app = new PIXI.Application({ width: 640, height: 360 });
-// document.body.appendChild(app.view);
+const gameStore = useGameStore()
 
-// Create the sprite and add it to the stage
-// let sprite = PIXI.Sprite.from('sample.png');
-// app.stage.addChild(sprite);
-
-// Add a ticker callback to move the sprite back and forth
-// let elapsed = 0.0;
-// app.ticker.add((delta) => {
-//   elapsed += delta;
-//   sprite.x = 100.0 + Math.cos(elapsed/50.0) * 100.0;
-// });
 
 onMounted(() => {
   const canvas = document.getElementById("myCanvas")
-
-  console.log(canvas)
   const ctx = canvas.getContext("2d")
+  gameStore.pickLetters(21, "jeff")
+
+  // console.log(gameStore.letters["jeff"])
+
+  for (let i = 0; i < 21; i++) {
+    const letter_value = gameStore.letters["jeff"][i]
+    const letter = new Letter(5, 6 + (10*i), 20, 20, letter_value)
+    letter.draw(ctx)
+  }
+
+
   const letter = new Letter()
   letter.draw(ctx)
 })
