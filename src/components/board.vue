@@ -14,17 +14,12 @@ onMounted(() => {
   const ctx = canvas.getContext("2d")
   gameStore.pickLetters(21, "jeff")
 
-  // console.log(gameStore.letters["jeff"])
-
   for (let i = 0; i < 21; i++) {
     const letter_value = gameStore.letters["jeff"][i]
     const letter = new Letter(20 + (20*i), 30, 20, 20, letter_value)
     letter.draw(ctx)
   }
 
-
-  // const letter = new Letter()
-  // letter.draw(ctx)
 })
 
 </script>
