@@ -6,7 +6,6 @@ export class Letter {
     this.height = height
 
     this.value = value
-    console.log("value: ", value)
   }
 
   draw(ctx: Context) {
