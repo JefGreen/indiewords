@@ -8,10 +8,18 @@ import { useGameStore } from '../stores/gameStore'
 
 const gameStore = useGameStore()
 
+function addEventListeners(canvas: HTMLElement) {
+  // See https://www.youtube.com/watch?v=FIyaIewZQsI
+  canvas.addEventListener("mouseDown", onMouseDown);
+  canvas.addEventListener("mouseMove", onMouseMove);
+  canvas.addEventListener("mouseUp", onMouseUp);
+}
+
 
 onMounted(() => {
   const canvas = document.getElementById("myCanvas")
   const ctx = canvas.getContext("2d")
+  addEventListeners(canvas);
   gameStore.pickLetters(21, "jeff")
 
   for (let i = 0; i < 21; i++) {
