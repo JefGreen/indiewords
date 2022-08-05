@@ -3,8 +3,6 @@ import { onMounted } from 'vue'
 import { Letter } from '../models/letter'
 import { useGameStore } from '../stores/gameStore'
 
-// import * as PIXI from 'pixi.js';
-
 
 const gameStore = useGameStore()
 
@@ -29,6 +27,8 @@ onMounted(() => {
   }
 
 })
+
+<!-- on unmounted-->
 
 </script>
 
