@@ -1,11 +1,14 @@
 export class Letter {
-  constructor(x: number, y: number, width: number, height: number, value: string) {
-    this.x = x,
-    this.y = y,
-    this.width = width,
-    this.height = height
+  constructor(
+    x: number,
+    y: number,
+    width: number,
+    height: number,
+    value: string
+  ) {
+    (this.x = x), (this.y = y), (this.width = width), (this.height = height);
 
-    this.value = value
+    this.value = value;
   }
 
   draw(ctx: Context) {
