@@ -4,12 +4,14 @@ name: Continuous Integration
 on:
   pull_request:
   push:
-    branches:
-      - main
 
 jobs:
-  prettier:
+  build:
+    name: Build
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node_version: [14]
 
     steps:
       - name: Checkout
@@ -23,3 +25,10 @@ jobs:
         with:
           # This part is also where you can pass other options, for example:
           prettier_options: --write **/*.{ts,md}
+
+      - name: run CI
+        run: |
+          npm install # or yarn install
+          npm run lint # or yarn lint
+          npm run test # or yarn test
+          npm run build # or yarn build
