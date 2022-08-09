@@ -2,7 +2,6 @@
 // type Description = string
 // // type Dictionary = Record<Word, Description>
 
-
 // class WordDictionary {
 //   words: Dictionary = {
 //     "word": 12,
@@ -47,7 +46,6 @@
 //   }
 
 // }
-
 
 // const dictionary = new WordDictionary()
 
