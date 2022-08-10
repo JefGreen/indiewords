@@ -7,7 +7,9 @@
     "dev": "vite",
     "test": "jest",
     "build": "vue-tsc --noEmit && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "format": "prettier --write src/**/*.ts{,x}",
+    "lint": "tsc --noEmit && eslint src/**/*.ts{,x}"
   },
   "dependencies": {
     "pinia": "^2.0.16",
