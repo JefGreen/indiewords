@@ -61,8 +61,8 @@ export const useGameStore = defineStore("gameStore", {
       return removedLetters;
     },
     validateWord(word: Word): boolean {
-      if(this.theme === null) {
-        return false
+      if (this.theme === null) {
+        return false;
       }
       return this.theme.has(word);
     },
