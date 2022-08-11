@@ -64,7 +64,7 @@ export const useGameStore = defineStore("gameStore", {
       if(this.theme === null) {
         return false
       }
-      return !!this.theme[word];
+      return this.theme.has(word);
     },
   },
 });
