@@ -15,20 +15,18 @@ function addEventListeners(canvas: HTMLElement) {
 
 
 onMounted(() => {
-  const canvas = document.getElementById("myCanvas")
-  const ctx = canvas.getContext("2d")
+  const canvas: HTMLCanvasElement = document.getElementById("myCanvas")
+  const ctx: CanvasRenderingContext2D = canvas.getContext("2d")
   addEventListeners(canvas);
   gameStore.pickLetters(21, "jeff")
 
   for (let i = 0; i < 21; i++) {
-    const letter_value = gameStore.letters["jeff"][i]
+    const letter_value: string = gameStore.letters["jeff"][i]
     const letter = new Letter(20 + (20*i), 30, 20, 20, letter_value)
     letter.draw(ctx)
   }
 
 })
-
-<!-- on unmounted-->
 
 </script>
 
