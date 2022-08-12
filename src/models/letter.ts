@@ -19,7 +19,7 @@ export class Letter {
     this.value = value;
   }
 
-  draw(ctx: Context) {
+  draw(ctx: CanvasRenderingContext2D) {
     ctx.beginPath();
     ctx.font = "20px Georgia";
     ctx.fillText(this.value, this.x, this.y);
