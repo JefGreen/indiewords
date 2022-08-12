@@ -6,8 +6,7 @@ type Letters = Array<string>;
 type Words = Array<Word>;
 type Dictionary = Set<string>;
 
-const lettersPool: Letters = []
-  .concat(Array(13).fill("a"))
+const lettersPool: Letters = Array.prototype.concat(Array(13).fill("a"))
   .concat(Array(3).fill("b"))
   .concat(Array(3).fill("c"))
   .concat(Array(6).fill("d"))
