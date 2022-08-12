@@ -1,4 +1,7 @@
 export class Letter {
+  x: number;
+  y: number;
+
   constructor(x: number, y: number, width: number, height: number, value: string) {
     this.x = x;
     this.y = y;
