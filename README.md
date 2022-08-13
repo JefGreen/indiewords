@@ -18,3 +18,5 @@ You can learn more about Take Over mode [here](https://github.com/johnsoncodehk/
 # indiewords
 
 A game of letters and fun
+
+![Build](https://github.com/JefGreen/indiewords/actions/workflows/main.yml/badge.svg)
