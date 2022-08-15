@@ -5,7 +5,8 @@
     },
     "extends": [
         "plugin:vue/vue3-essential",
-        "google"
+        "google",
+        "prettier"
     ],
     "parserOptions": {
         "ecmaVersion": "latest",
@@ -16,5 +17,6 @@
         "@typescript-eslint"
     ],
     "rules": {
+
     }
 }
