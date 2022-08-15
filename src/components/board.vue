@@ -1,33 +1,29 @@
 <script setup lang="ts">
-import { onMounted } from 'vue'
-import { Letter } from '../models/letter'
-import { useGameStore } from '../stores/gameStore'
+import {onMounted} from 'vue';
+import {Letter} from '../models/letter';
+import {useGameStore} from '../stores/gameStore';
 
-
-const gameStore = useGameStore()
+const gameStore = useGameStore();
 
 function addEventListeners(canvas: HTMLElement) {
   // See https://www.youtube.com/watch?v=FIyaIewZQsI
-  canvas.addEventListener("mouseDown", onMouseDown);
-  canvas.addEventListener("mouseMove", onMouseMove);
-  canvas.addEventListener("mouseUp", onMouseUp);
+  canvas.addEventListener('mouseDown', onMouseDown);
+  // canvas.addEventListener('mouseMove', onMouseMove);
+  // canvas.addEventListener('mouseUp', onMouseUp);
 }
 
-
 onMounted(() => {
-  const canvas: HTMLCanvasElement = document.getElementById("myCanvas")
-  const ctx: CanvasRenderingContext2D = canvas.getContext("2d")
+  const canvas: HTMLCanvasElement = document.getElementById('myCanvas');
+  const ctx: CanvasRenderingContext2D = canvas.getContext('2d');
   addEventListeners(canvas);
-  gameStore.pickLetters(21, "jeff")
+  gameStore.pickLetters(21, 'jeff');
 
   for (let i = 0; i < 21; i++) {
-    const letter_value: string = gameStore.letters["jeff"][i]
-    const letter = new Letter(20 + (20*i), 30, 20, 20, letter_value)
-    letter.draw(ctx)
+    const letterValue: string = gameStore.letters['jeff'][i];
+    const letter = new Letter(20 + 20 * i, 30, 20, 20, letterValue);
+    letter.draw(ctx);
   }
-
-})
-
+});
 </script>
 
 <template>
@@ -39,7 +35,7 @@ onMounted(() => {
 .read-the-docs {
   color: #888;
 }
-#myCanvas{
+#myCanvas {
   margin: 0;
   width: 100vw;
   height: 100vh;
