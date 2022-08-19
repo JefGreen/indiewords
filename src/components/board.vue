@@ -8,8 +8,8 @@ const gameStore = useGameStore();
 function addEventListeners(canvas: HTMLElement) {
   // See https://www.youtube.com/watch?v=FIyaIewZQsI
   canvas.addEventListener('mouseDown', onMouseDown);
-  // canvas.addEventListener('mouseMove', onMouseMove);
-  // canvas.addEventListener('mouseUp', onMouseUp);
+  canvas.addEventListener('mouseMove', onMouseMove);
+  canvas.addEventListener('mouseUp', onMouseUp);
 }
 
 onMounted(() => {
