@@ -5,6 +5,7 @@ import {useGameStore} from '../stores/gameStore';
 
 const gameStore = useGameStore();
 
+// TODO: complete drap and drop logic
 function addEventListeners(canvas: HTMLElement) {
   // See https://www.youtube.com/watch?v=FIyaIewZQsI
   canvas.addEventListener('mouseDown', onMouseDown);
