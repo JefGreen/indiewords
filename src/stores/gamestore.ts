@@ -1,4 +1,4 @@
-import { defineStore } from "pinia";
+import {defineStore} from 'pinia';
 
 type User = string;
 type Word = string;
@@ -7,37 +7,37 @@ type Words = Array<Word>;
 type Dictionary = Set<string>;
 
 const lettersPool: Letters = Array.prototype
-  .concat(Array(13).fill("a"))
-  .concat(Array(3).fill("b"))
-  .concat(Array(3).fill("c"))
-  .concat(Array(6).fill("d"))
-  .concat(Array(18).fill("e"))
-  .concat(Array(3).fill("f"))
-  .concat(Array(4).fill("g"))
-  .concat(Array(3).fill("h"))
-  .concat(Array(12).fill("i"))
-  .concat(Array(2).fill("j"))
-  .concat(Array(2).fill("k"))
-  .concat(Array(5).fill("l"))
-  .concat(Array(3).fill("m"))
-  .concat(Array(8).fill("n"))
-  .concat(Array(11).fill("o"))
-  .concat(Array(3).fill("p"))
-  .concat(Array(2).fill("q"))
-  .concat(Array(9).fill("r"))
-  .concat(Array(6).fill("s"))
-  .concat(Array(9).fill("t"))
-  .concat(Array(6).fill("u"))
-  .concat(Array(3).fill("v"))
-  .concat(Array(3).fill("w"))
-  .concat(Array(2).fill("x"))
-  .concat(Array(3).fill("y"))
-  .concat(Array(2).fill("z"));
+    .concat(Array(13).fill('a'))
+    .concat(Array(3).fill('b'))
+    .concat(Array(3).fill('c'))
+    .concat(Array(6).fill('d'))
+    .concat(Array(18).fill('e'))
+    .concat(Array(3).fill('f'))
+    .concat(Array(4).fill('g'))
+    .concat(Array(3).fill('h'))
+    .concat(Array(12).fill('i'))
+    .concat(Array(2).fill('j'))
+    .concat(Array(2).fill('k'))
+    .concat(Array(5).fill('l'))
+    .concat(Array(3).fill('m'))
+    .concat(Array(8).fill('n'))
+    .concat(Array(11).fill('o'))
+    .concat(Array(3).fill('p'))
+    .concat(Array(2).fill('q'))
+    .concat(Array(9).fill('r'))
+    .concat(Array(6).fill('s'))
+    .concat(Array(9).fill('t'))
+    .concat(Array(6).fill('u'))
+    .concat(Array(3).fill('v'))
+    .concat(Array(3).fill('w'))
+    .concat(Array(2).fill('x'))
+    .concat(Array(3).fill('y'))
+    .concat(Array(2).fill('z'));
 
-export const useGameStore = defineStore("gameStore", {
+export const useGameStore = defineStore('gameStore', {
   state: () =>
     ({
-      letters: { pool: shuffle(lettersPool) },
+      letters: {pool: shuffle(lettersPool)},
       words: {},
       theme: null,
     } as {
@@ -47,9 +47,9 @@ export const useGameStore = defineStore("gameStore", {
     }),
   actions: {
     pickLetters(quantity: number, player: User): Array<string> {
-      let removedLetters: Array<string> = [];
+      const removedLetters: Array<string> = [];
       for (let i = 0; i < quantity; i++) {
-        const removedLetter: string | undefined = this.letters["pool"].pop();
+        const removedLetter: string | undefined = this.letters['pool'].pop();
         if (removedLetter) {
           if (!this.letters[player]) {
             this.letters[player] = [removedLetter];
