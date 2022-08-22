@@ -69,6 +69,10 @@ export const useGameStore = defineStore('gameStore', {
   },
 });
 
+/** This function is used to shuffle a list of letters
+   * @param {Array<string>} letters
+   * @return {Array<string>} letters
+   * */
 function shuffle(letters: Array<string>): Array<string> {
   let current: number = letters.length;
   let random;
