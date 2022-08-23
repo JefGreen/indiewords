@@ -9,7 +9,7 @@ const gameStore = useGameStore();
 /** This function add event listeners in the canvas to allow drag and drop
    * @param {HTMLElement} canvas
    * */
-function addEventListeners(canvas: HTMLElement) {
+function addEventListeners(canvas: HTMLElement): void {
   // See https://www.youtube.com/watch?v=FIyaIewZQsI
   canvas.addEventListener('mouseDown', onMouseDown);
   canvas.addEventListener('mouseMove', onMouseMove);
@@ -31,7 +31,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <h1>{{ msg }}</h1>
+  <h1>Board</h1>
   <canvas id="myCanvas"></canvas>
 </template>
 
