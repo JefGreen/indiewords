@@ -29,7 +29,10 @@ function addEventListeners(canvas: HTMLElement): void {
 }
 
 onMounted(() => {
-  const canvas: HTMLCanvasElement = document.getElementById('myCanvas');
+  const canvas: HTMLCanvasElement | null = document.getElementById('myCanvas');
+  if (canvas === null) {
+    return
+  }
   const ctx: CanvasRenderingContext2D = canvas.getContext('2d');
   addEventListeners(canvas);
   gameStore.pickLetters(21, 'jeff');
