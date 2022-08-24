@@ -1,9 +1,21 @@
-<script setup lang="ts">
+<script setup lang='ts'>
 import {onMounted} from 'vue';
 import {Letter} from '../models/letter';
 import {useGameStore} from '../stores/gameStore';
 
 const gameStore = useGameStore();
+
+function onMouseDown() {
+
+}
+
+function onMouseMove() {
+
+}
+
+function onMouseUp() {
+
+}
 
 // TODO: complete drap and drop logic
 /** This function add event listeners in the canvas to allow drag and drop
