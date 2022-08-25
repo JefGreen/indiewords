@@ -29,11 +29,8 @@ function addEventListeners(canvas: HTMLCanvasElement): void {
 }
 
 onMounted(() => {
-  const canvas: HTMLElement | null = document.getElementById('myCanvas');
-  if (canvas === null) return
-
-  const ctx: CanvasRenderingContext2D | null = canvas.getContext('2d');
-  if (ctx === null) return
+  const canvas = document.getElementById('myCanvas') as HTMLCanvasElement;
+  const ctx = canvas.getContext('2d') as CanvasRenderingContext2D;
 
   addEventListeners(canvas);
   gameStore.pickLetters(21, 'jeff');
