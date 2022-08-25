@@ -19,9 +19,9 @@ function onMouseUp() {
 
 // TODO: complete drap and drop logic
 /** This function add event listeners in the canvas to allow drag and drop
-   * @param {HTMLElement} canvas
+   * @param {HTMLCanvasElement} canvas
    * */
-function addEventListeners(canvas: HTMLElement): void {
+function addEventListeners(canvas: HTMLCanvasElement): void {
   // See https://www.youtube.com/watch?v=FIyaIewZQsI
   canvas.addEventListener('mouseDown', onMouseDown);
   canvas.addEventListener('mouseMove', onMouseMove);
