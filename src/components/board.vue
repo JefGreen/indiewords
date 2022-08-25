@@ -1,7 +1,7 @@
 <script setup lang='ts'>
 import {onMounted} from 'vue';
 import {Letter} from '../models/letter';
-import {useGameStore} from './stores/gameStore';
+import {useGameStore} from '../stores/gamestore';
 
 const gameStore = useGameStore();
 
