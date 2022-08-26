@@ -5,22 +5,31 @@ import {useGameStore} from '../stores/gamestore';
 
 const gameStore = useGameStore();
 
+/** This function add event listeners in the canvas to allow drag and drop
+  * @param {HTMLCanvasElement} canvas
+  * */
 function onMouseDown() {
 
 }
 
+/** This function add event listeners in the canvas to allow drag and drop
+  * @param {HTMLCanvasElement} canvas
+  * */
 function onMouseMove() {
 
 }
 
+/** This function add event listeners in the canvas to allow drag and drop
+  * @param {HTMLCanvasElement} canvas
+  * */
 function onMouseUp() {
 
 }
 
 // TODO: complete drap and drop logic
 /** This function add event listeners in the canvas to allow drag and drop
-   * @param {HTMLCanvasElement} canvas
-   * */
+  * @param {HTMLCanvasElement} canvas
+  * */
 function addEventListeners(canvas: HTMLCanvasElement): void {
   // See https://www.youtube.com/watch?v=FIyaIewZQsI
   canvas.addEventListener('mouseDown', onMouseDown);
