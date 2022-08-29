@@ -10,8 +10,14 @@ let SELECTED_PIECE = null
 /** This function add event listeners in the canvas to allow drag and drop
   * @param {HTMLCanvasElement} canvas
   * */
-function onMouseDown() {
-  SELECTED_PIECE = getPrecedPiece()
+function onMouseDown(evt) {
+  SELECTED_PIECE = getPrecedPiece(evt)
+  if (SELECTED_PIECE !== null) {
+    SELECTED_PIECE.offset=(
+      x:evt.x - SELECTED_PIECE.x,
+      y:evt.y - SELECTED_PIECE.y,
+      )
+  }
 
 }
 
