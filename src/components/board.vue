@@ -5,10 +5,13 @@ import {useGameStore} from '../stores/gamestore';
 
 const gameStore = useGameStore();
 
+let SELECTED_PIECE = null
+
 /** This function add event listeners in the canvas to allow drag and drop
   * @param {HTMLCanvasElement} canvas
   * */
 function onMouseDown() {
+  SELECTED_PIECE = getPrecedPiece()
 
 }
 
