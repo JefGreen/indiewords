@@ -14,9 +14,9 @@ function onMouseDown(evt) {
   SELECTED_PIECE = getPrecedPiece(evt)
   if (SELECTED_PIECE !== null) {
     SELECTED_PIECE.offset=(
-      x:evt.x - SELECTED_PIECE.x,
-      y:evt.y - SELECTED_PIECE.y,
-      )
+      x: evt.x - SELECTED_PIECE.x,
+      y: evt.y - SELECTED_PIECE.y,
+    )
   }
 
 }
