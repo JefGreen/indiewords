@@ -38,6 +38,13 @@ function onMouseUp(evt) {
   // TODO
 }
 
+/** This function add event listeners in the canvas to allow drag and drop
+  * @param {HTMLCanvasElement} loc
+  * */
+function getPressedPiece(loc) {
+  // TODO
+}
+
 // TODO: complete drap and drop logic
 /** This function add event listeners in the canvas to allow drag and drop
   * @param {HTMLCanvasElement} canvas
