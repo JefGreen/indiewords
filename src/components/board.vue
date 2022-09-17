@@ -25,14 +25,17 @@ function onMouseDown(evt) {
   * @param {HTMLCanvasElement} canvas
   * */
 function onMouseMove() {
-
+  if(SELECTED_PIECE !== null) {
+    SELECTED_PIECE.x = evt.x - SELECTED_PIECE.offset.x
+    SELECTED_PIECE.y = evt.y - SELECTED_PIECE.offset.y
+  }
 }
 
 /** This function add event listeners in the canvas to allow drag and drop
   * @param {HTMLCanvasElement} canvas
   * */
-function onMouseUp() {
-
+function onMouseUp(evt) {
+  // TODO
 }
 
 // TODO: complete drap and drop logic
