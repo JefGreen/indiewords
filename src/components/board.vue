@@ -44,6 +44,7 @@ function addEventListeners(canvas: HTMLCanvasElement): void {
   canvas.addEventListener('mouseDown', onMouseDown);
   canvas.addEventListener('mouseMove', onMouseMove);
   canvas.addEventListener('mouseUp', onMouseUp);
+
 }
 
 onMounted(() => {
